@@ -1,6 +1,8 @@
 <template>
     <div id="app">
         <div class="pictureBg" :style="bgImage"></div>
+        <div class="opacity"></div>
+
         <div class="center-holder">
             <Player/>
         </div>
@@ -51,11 +53,20 @@
         color: #ffffff;
     }
 
+    .opacity{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+    }
+
     .pictureBg{
         position: absolute;
         width: 100%;
         height: 100%;
-        background-size: contain;
+        background-size: cover;
+        background-position: -50%;
         background-position: center;
         background-repeat: no-repeat;
 
