@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <div class="pictureBg" :style="bgImage"></div>
         <div class="center-holder">
             <Player/>
         </div>
@@ -13,18 +14,57 @@
         name: 'app',
         components: {
             Player
+        },
+        data: function () {
+            return {
+                bgImage:{
+                    backgroundImage:'empty'
+                }
+            }
+        },
+        mounted: function () {
+            setTimeout(()=>{
+                this.backgroundImage();
+            },5000);
+
+            this.backgroundImage();
+        },
+        methods: {
+
+            backgroundImage:function () {
+                this.$http
+                    .get('https://www.radioking.com/widgets/currenttrack.php?radio=145142&format=json')
+                    .then((response) => {
+                        this.bgImage.backgroundImage = 'url('+response.body.cover+')';
+                    })
+
+            }
         }
     }
 </script>
 
 <style>
-    body{
+    body {
         background-color: black;
         width: 100%;
         height: 100%;
+        color: #ffffff;
     }
 
-    .center-holder{
+    .pictureBg{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        -ms-filter: blur(5px);
+        width: 100%;
+        height: 100%;
+    }
+    .center-holder {
         text-align: center;
         margin: auto;
         max-width: 500px;
@@ -34,9 +74,8 @@
         transform: translateX(-50%) translateY(-50%);
     }
 
-    @media screen and (max-width: 1024px)
-    {
-        .center-holder{
+    @media screen and (max-width: 1024px) {
+        .center-holder {
             top: 30px;
             transform: translateX(-50%) translateY(0%);
         }
