@@ -23,7 +23,7 @@
             }
         },
         mounted: function () {
-            setTimeout(()=>{
+            setInterval(()=>{
                 this.backgroundImage();
             },5000);
 
@@ -63,6 +63,12 @@
         -ms-filter: blur(5px);
         width: 100%;
         height: 100%;
+
+        transition:all 0.5s ease-in-out;
+        -moz-transition:all 0.5s ease-in-out;
+        -o-transition:all 0.5s ease-in-out;
+        -ms-transition:all 0.5s ease-in-out;
+        -webkit-transition:all 0.5s ease-in-out;
     }
     .center-holder {
         text-align: center;
