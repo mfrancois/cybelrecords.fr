@@ -81,11 +81,11 @@
         background-repeat: no-repeat;
 
 
-        filter: blur(5px);
-        -webkit-filter: blur(5px);
-        -moz-filter: blur(5px);
-        -o-filter: blur(5px);
-        -ms-filter: blur(5px);
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+        -moz-filter: blur(10px);
+        -o-filter: blur(10px);
+        -ms-filter: blur(10px);
 
         transition:all 0.5s ease-in-out;
         -moz-transition:all 0.5s ease-in-out;
