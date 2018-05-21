@@ -55,7 +55,11 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background-size: cover;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+
         filter: blur(5px);
         -webkit-filter: blur(5px);
         -moz-filter: blur(5px);
