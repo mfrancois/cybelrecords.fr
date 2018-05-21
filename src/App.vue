@@ -51,22 +51,32 @@
         width: 100%;
         height: 100%;
         color: #ffffff;
+        margin:0;
+        padding:0;
     }
 
     .opacity{
         position: absolute;
-        width: 100%;
-        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
         background-color: black;
         opacity: 0.8;
+        margin:0;
+        padding:0;
     }
 
     .pictureBg{
         position: absolute;
-        width: 100%;
-        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin:0;
+        padding:0;
+
         background-size: cover;
-        background-position: -50%;
         background-position: center;
         background-repeat: no-repeat;
 
@@ -76,8 +86,6 @@
         -moz-filter: blur(5px);
         -o-filter: blur(5px);
         -ms-filter: blur(5px);
-        width: 100%;
-        height: 100%;
 
         transition:all 0.5s ease-in-out;
         -moz-transition:all 0.5s ease-in-out;
