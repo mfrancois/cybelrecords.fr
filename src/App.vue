@@ -1,18 +1,40 @@
 <template>
-    <div id="app" >
-        <layout>
+    <transition
+            v-on:before-enter="beforeEnter"
+            v-on:enter="enter"
+            v-on:leave="leave"
+            v-bind:css="false"
+    >
+        <div id="app" v-if="show" >
+            <layout>
 
-            <template slot="colLeft">
-                <BackgroungPlayer class="opacity"/>
-                <Player/>
-            </template>
+                <template slot="colLeft">
+                    <div id="backLeft">
+                        <BackgroungPlayer class="opacity"/>
+                    </div>
+                    <div id="Player">
+                        <Player />
+                    </div>
 
-            <template slot="colRight">
-                <BackgroundInfo class="opacity"/>
-                <Social/>
-            </template>
-        </layout>
-    </div>
+
+                </template>
+
+                <template slot="colRight">
+                    <div id="colRight">
+                        <div id="backRight">
+                            <BackgroundInfo class="opacity"/>
+                        </div>
+
+                        <div id="Social">
+                            <Social/>
+                        </div>
+                    </div>
+                </template>
+            </layout>
+        </div>
+
+    </transition>
+
 </template>
 
 <script>
@@ -21,6 +43,9 @@
     import BackgroundInfo from "./components/BackgroundInfo"
     import Layout from "./components/Layout";
     import Social from "./components/Socials/Social";
+    import {TimelineMax} from "gsap/TweenMax";
+    import {TweenLite} from "gsap";
+    import {Power0} from "gsap/EasePack";
 
     export default {
         name: 'app',
@@ -30,6 +55,36 @@
             BackgroungPlayer,
             Layout,
             Social
+        },
+        data:function(){
+            return {
+                show: false
+            }
+        },
+        mounted:function(){
+            this.show = true;
+        },
+        methods: {
+            beforeEnter: function (el) {
+            },
+            enter: function (el, done) {
+
+                let tl = new TimelineMax({delay:0.5, repeat:0, repeatDelay:0, onComplete:done});
+
+                tl
+                    .fromTo(el.querySelector('#backLeft > div'), 0.6,{marginTop:'100vh'}, {marginTop:0},'a')
+                    .fromTo(el.querySelector('#backRight > div'), 0.6,{marginBottom:'100vh'}, {marginBottom:0},'a')
+                    .fromTo(el.querySelector('#Social > div > #divlogo'), 0.6,{scale:0},{scale:1}, 'b')
+                    .fromTo(el.querySelector('#Player'), 0.6,{scale:0},{scale:1}, 'b')
+                    .fromTo(el.querySelector('#Social > div > #description > div > p'), 2,{scale:0},{scale:1}, 'c')
+                    .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 1,{scale:0},{scale:1}, 0.3, 'c')
+                    TweenLite.to(el.querySelector('#Social > div > #description > div > #descriptiontext'), 0, {text:"This is the new text", ease: Power0.easeNone});
+
+            },
+            leave: function (el, done) {
+
+                done();
+            }
         }
     
     }

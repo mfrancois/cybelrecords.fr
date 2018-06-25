@@ -22,6 +22,8 @@
         margin-top: 5vh;
         margin-bottom: 5vh;
 
+
+
         .icon-holder{
             text-align: center;
             width: 100%;
@@ -29,7 +31,6 @@
             justify-content: center;
 
             .iconrs{
-                transition: 0.3s;
                 float: left;
                 box-sizing: border-box;
                 width: 100px;

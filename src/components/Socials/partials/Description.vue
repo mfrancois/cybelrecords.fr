@@ -1,6 +1,6 @@
 <template>
-    <div class="text-center centered">
-        IDM, ITALO DISCO, FUNK,<br /> NEW WAVE, FRENCH TASTE <br /> WEBRADIO
+    <div class="text-center centered" >
+        <p id="descriptiontext">IDM, ITALO DISCO, FUNK,<br /> NEW WAVE, FRENCH TASTE <br /> WEBRADIO</p>
     </div>
 </template>
 
