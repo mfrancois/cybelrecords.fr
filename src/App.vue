@@ -44,8 +44,6 @@
     import Layout from "./components/Layout";
     import Social from "./components/Socials/Social";
     import {TimelineMax} from "gsap/TweenMax";
-    import {TweenLite} from "gsap";
-    import {Power0} from "gsap/EasePack";
 
     export default {
         name: 'app',
@@ -76,9 +74,7 @@
                     .fromTo(el.querySelector('#backRight > div'), 0.6,{marginBottom:'100vh'}, {marginBottom:0},'a')
                     .fromTo(el.querySelector('#Social > div > #divlogo'), 0.6,{scale:0},{scale:1}, 'b')
                     .fromTo(el.querySelector('#Player'), 0.6,{scale:0},{scale:1}, 'b')
-                    .fromTo(el.querySelector('#Social > div > #description > div > p'), 2,{scale:0},{scale:1}, 'c')
                     .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 1,{scale:0},{scale:1}, 0.3, 'c')
-                    TweenLite.to(el.querySelector('#Social > div > #description > div > #descriptiontext'), 0, {text:"This is the new text", ease: Power0.easeNone});
 
             },
             leave: function (el, done) {
