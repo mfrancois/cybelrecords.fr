@@ -1,6 +1,8 @@
 <template>
     <div class="text-center centered" >
         <p id="txtdesc"></p>
+        <p id="txtdesc2"></p>
+        <p id="txtdesc3"></p>
     </div>
 </template>
 
@@ -9,22 +11,35 @@
         name: 'Logo',
 
         mounted:function(){
-            var string = "IDM, ITALO DISCO, FUNK, NEW WAVE, FRENCH TASTE WEBRADIO";
+            var string = "IDM, ITALO DISCO, FUNK,";
+            var string2 = "NEW WAVE, FRENCH TASTE";
+            var string3 = "WEBRADIO";
+
 
             var strArray = string.split("");
-
-
+            var strArray2 = string2.split("");
+            var strArray3 = string3.split("");
 
 
 
             setTimeout(function animate(){
                 if(strArray.length > 0){
                     document.getElementById('txtdesc').innerHTML += strArray.shift();
-                }else{
-                    return;
                 }
-                setTimeout(animate, 40);
+                setTimeout(animate, 30);
             }, 1600);
+            setTimeout(function animate(){
+                if(strArray2.length > 0){
+                    document.getElementById('txtdesc2').innerHTML += strArray2.shift();
+                }
+                setTimeout(animate, 30);
+            }, 2290);
+            setTimeout(function animate(){
+                if(strArray3.length > 0){
+                    document.getElementById('txtdesc3').innerHTML += strArray3.shift();
+                }
+                setTimeout(animate, 30);
+            }, 2950);
         }
     }
 
@@ -51,10 +66,15 @@
         letter-spacing: 9px;
         font-family: 'ModernNo20';
 
+        p{
+            margin-bottom: 0;
+        }
+
+
         @media screen and (max-width: 1920px) {
             color: white;
             font-size: 14px;
-            margin-bottom: 5vh;
+            margin-bottom: 3vh;
             letter-spacing: 6px;
         }
     }

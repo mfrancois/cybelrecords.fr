@@ -74,7 +74,7 @@
                     .fromTo(el.querySelector('#backRight > div'), 0.6,{marginBottom:'100vh'}, {marginBottom:0},'a')
                     .fromTo(el.querySelector('#Social > div > #divlogo'), 0.6,{scale:0},{scale:1}, 'b')
                     .fromTo(el.querySelector('#Player'), 0.6,{scale:0},{scale:1}, 'b')
-                    .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 1,{scale:0},{scale:1}, 0.3, 'c')
+                    .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 1,{scale:0},{scale:1, delay: 1.2}, 0.3, 'c')
 
             },
             leave: function (el, done) {

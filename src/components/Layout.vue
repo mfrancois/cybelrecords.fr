@@ -1,11 +1,11 @@
 <template>
     <div class="container-fluid">
         <div class="row fullwindowed">
-            <div class="col-md-6">
+            <div class="col-xl-6">
                 <slot name="colLeft">
                 </slot>
             </div>
-            <div class="col-md-6">
+            <div class="col-xl-6">
                 <slot name="colRight">
 
                 </slot>

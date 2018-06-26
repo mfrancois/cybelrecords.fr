@@ -1,12 +1,12 @@
 <template>
     <div class="row divlogo" >
-        <div class="offset-md-4 col-md-4" id="divlogo">
+        <div class="offset-xl-4 col-xl-4" id="divlogo">
             <Logo/>
         </div>
-        <div class="offset-md-2 col-md-8" id="description">
+        <div class="offset-xl-2 col-xl-8" id="description">
             <Description/>
         </div>
-        <div class="offset-md-2 col-md-8" id="socialnetwork">
+        <div class="offset-xl-2 col-xl-8" id="socialnetwork">
             <SocialNetwork/>
         </div>
     </div>
