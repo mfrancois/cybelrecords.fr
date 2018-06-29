@@ -1,1 +1,7 @@
-{}
+{
+  "name": "cybel",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "type": "docker"
+}

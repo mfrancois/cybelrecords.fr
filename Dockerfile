@@ -11,4 +11,4 @@ COPY . /var/www/html
 RUN npm install
 ENV NODE_ENV production
 RUN npm run build
-WORKDIR /var/www/html/dist
+CMD ['npm','run','serve']
