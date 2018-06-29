@@ -1,9 +1,11 @@
 <template>
-    <div class="background-holder">
-        <div class="pictureBg" :style="bgImage"></div>
+    <div id="background-holder" class="background-holder">
+        <div id="pictureBg" class="pictureBg" :style="bgImage"></div>
     </div>
 </template>
 <script>
+
+    import backgroundReverse from './../img/backgroundreverse.png'
 
     export default {
         name: 'backgroundPlayer',
@@ -18,7 +20,6 @@
             setInterval(() => {
                 this.backgroundImage();
             }, 5000);
-
             this.backgroundImage();
         },
         methods: {
@@ -27,10 +28,14 @@
                 this.$http
                     .get('https://www.radioking.com/widgets/currenttrack.php?radio=145142&format=json')
                     .then((response) => {
-                        this.bgImage.backgroundImage = 'url(' + response.body.cover + ')';
+                        if (response.body.cover)
+                            this.bgImage.backgroundImage = 'url(' + response.body.cover + ')';
+                        else
+                            this.bgImage.backgroundImage = 'url(' + backgroundReverse + ')';
                     })
+            },
 
-            }
+
         }
     }
 </script>
@@ -65,6 +70,8 @@
             -ms-transition: all 0.5s ease-in-out;
             -webkit-transition: all 0.5s ease-in-out;
         }
+
     }
+
 
 </style>

@@ -20,14 +20,14 @@
         z-index: 1;
         width: 100%;
         height: 100%;
-        margin-top: 25vh;
+        margin-top: 30vh;
         margin-bottom: 5vh;
 
         iframe {
             overflow: hidden;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1920px) {
             margin-top: 10vh;
         }
     }

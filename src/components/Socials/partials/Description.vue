@@ -1,50 +1,68 @@
 <template>
-    <div class="text-center centered" >
-        <p id="txtdesc"></p>
-        <p id="txtdesc2"></p>
-        <p id="txtdesc3"></p>
+    <div class="text-center centered">
+        <p v-for="item in items" :key="item.id">{{item.current}}</p>
     </div>
 </template>
 
 <script>
+    import Vue from 'vue'
+
     export default {
         name: 'Logo',
 
-        mounted:function(){
-            var string = "IDM, ITALO DISCO, FUNK,";
-            var string2 = "NEW WAVE, FRENCH TASTE";
-            var string3 = "WEBRADIO";
+        data: function () {
+            return {
+                items: [
+                    {current:'',message: 'IDM, ITALO DISCO, FUNK,', id: 1},
+                    {current:'',message: 'NEW WAVE, FRENCH TASTE', id: 2},
+                    {current:'',message: 'WEBRADIO', id: 3}
+                ]
+            }
+        },
 
 
-            var strArray = string.split("");
-            var strArray2 = string2.split("");
-            var strArray3 = string3.split("");
+        mounted: function () {
+            Vue.nextTick(()=>{
+                this.initDescriptions();
+            });
+        },
 
+        methods: {
+            initDescriptions: function () {
+                let delay = 1600;
 
+                for (let i in this.items) {
 
-            setTimeout(function animate(){
-                if(strArray.length > 0){
-                    document.getElementById('txtdesc').innerHTML += strArray.shift();
+                    if (i != 0) {
+                        delay = delay + this.items[i-1].message.length * 30;
+                    }
+
+                    let strArray = this.items[i].message.split("");
+
+                    setTimeout(()=>{
+                        this.animate(this.items[i],strArray);
+                    }, delay);
+
                 }
-                setTimeout(animate, 30);
-            }, 1600);
-            setTimeout(function animate(){
-                if(strArray2.length > 0){
-                    document.getElementById('txtdesc2').innerHTML += strArray2.shift();
+
+
+            },
+            animate: function (el, strArray) {
+
+
+                if (strArray.length > 0) {
+                    el.current += strArray.shift();
                 }
-                setTimeout(animate, 30);
-            }, 2290);
-            setTimeout(function animate(){
-                if(strArray3.length > 0){
-                    document.getElementById('txtdesc3').innerHTML += strArray3.shift();
+
+                if (strArray.length > 0) {
+                    setTimeout(() => {
+                        this.animate(el, strArray)
+                    }, 30);
                 }
-                setTimeout(animate, 30);
-            }, 2950);
+
+            }
         }
     }
-
-
-
 
 
 </script>
@@ -53,10 +71,10 @@
 <style lang="scss" scoped>
 
     @font-face {
-      font-family: 'ModernNo20';
-      src: url('../../../font/Modern No. 20.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
+        font-family: 'ModernNo20';
+        src: url('../../../font/Modern No. 20.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
     }
 
     .centered {
@@ -66,10 +84,17 @@
         letter-spacing: 9px;
         font-family: 'ModernNo20';
 
-        p{
+        p {
             margin-bottom: 0;
         }
 
+        ul {
+            padding-left: 0px;
+
+            li {
+                list-style-type: none;
+            }
+        }
 
         @media screen and (max-width: 1920px) {
             color: white;

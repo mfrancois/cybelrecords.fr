@@ -10,7 +10,7 @@
 
                 <template slot="colLeft">
                     <div id="backLeft">
-                        <BackgroungPlayer class="opacity"/>
+                        <BackgroungPlayer  class="opacity" />
                     </div>
                     <div id="Player">
                         <Player />
@@ -21,7 +21,7 @@
 
                 <template slot="colRight">
                     <div id="colRight">
-                        <div id="backRight">
+                        <div id="backRight" >
                             <BackgroundInfo class="opacity"/>
                         </div>
 
@@ -63,7 +63,7 @@
             this.show = true;
         },
         methods: {
-            beforeEnter: function (el) {
+            beforeEnter: function () {
             },
             enter: function (el, done) {
 
@@ -74,8 +74,7 @@
                     .fromTo(el.querySelector('#backRight > div'), 0.6,{marginBottom:'100vh'}, {marginBottom:0},'a')
                     .fromTo(el.querySelector('#Social > div > #divlogo'), 0.6,{scale:0},{scale:1}, 'b')
                     .fromTo(el.querySelector('#Player'), 0.6,{scale:0},{scale:1}, 'b')
-                    .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 1,{scale:0},{scale:1, delay: 1.2}, 0.3, 'c')
-
+                    .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 0.7,{scale:0},{scale:1, delay: 1.2}, 0.3, 'c')
             },
             leave: function (el, done) {
 
