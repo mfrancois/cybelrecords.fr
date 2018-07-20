@@ -22,7 +22,7 @@
             bottom: 0;
             right: 0;
             background-color: black;
-            opacity: 0.8;
+            opacity: 0.9;
             margin: 0;
             padding: 0;
         }
