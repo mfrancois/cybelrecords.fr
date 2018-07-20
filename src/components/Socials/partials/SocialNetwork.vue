@@ -20,9 +20,9 @@
 
     .divsn{
         margin-top: 5vh;
-        /*margin-bottom: 2vh;*/
-
-
+        .fa-2x{
+            font-size: 1.4em !important;
+        }
 
         .icon-holder{
             text-align: center;
@@ -33,8 +33,8 @@
             .iconrs{
                 float: left;
                 box-sizing: border-box;
-                width: 100px;
-                padding: 15px;
+                width: 60px;
+                padding: 0;
 
                 path{
                     transition: 0.4s;

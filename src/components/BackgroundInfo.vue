@@ -1,6 +1,7 @@
 <template>
     <div class="background-holder">
         <div class="pictureBg"></div>
+        <div class="opacity"></div>
     </div>
 </template>
 <script>
@@ -14,6 +15,18 @@
 <style lang="scss" scoped>
 
     .background-holder {
+        .opacity {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: 0.8;
+            margin: 0;
+            padding: 0;
+        }
+
         .pictureBg {
 
             position: absolute;
@@ -24,18 +37,12 @@
             margin: 0;
             padding: 0;
             background-size: cover;
-            background-image: url('../img/background.png');
+            background-image: url('../img/background.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-
-            filter: blur(10px);
-            -webkit-filter: blur(10px);
-            -moz-filter: blur(10px);
-            -o-filter: blur(10px);
-            -ms-filter: blur(10px);
-
         }
+
     }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="row divlogo" >
+    <div class="row divlogo">
         <div class="offset-xl-4 col-xl-4" id="divlogo">
             <Logo/>
         </div>
@@ -30,11 +30,17 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 
-    .divlogo {
-        margin-top: 20vh;
-
+    #divlogo {
         @media screen and (max-width: 768px) {
-            margin-top: 10vh;
+            max-width:50%;
+            margin:auto;
+        }
+    }
+
+    #description {
+        @media screen and (max-width: 768px) {
+            padding-left:15%;
+            padding-right:15%;
         }
     }
 </style>

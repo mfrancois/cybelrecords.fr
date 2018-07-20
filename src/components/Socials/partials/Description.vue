@@ -1,12 +1,10 @@
 <template>
     <div class="text-center centered">
-        <p v-for="item in items" :key="item.id">{{item.current}}</p>
+        <p v-for="item in items" :key="item.id">{{item.message}}</p>
     </div>
 </template>
 
 <script>
-    import Vue from 'vue'
-
     export default {
         name: 'Logo',
 
@@ -22,45 +20,9 @@
 
 
         mounted: function () {
-            Vue.nextTick(()=>{
-                this.initDescriptions();
-            });
         },
 
         methods: {
-            initDescriptions: function () {
-                let delay = 1600;
-
-                for (let i in this.items) {
-
-                    if (i != 0) {
-                        delay = delay + this.items[i-1].message.length * 30;
-                    }
-
-                    let strArray = this.items[i].message.split("");
-
-                    setTimeout(()=>{
-                        this.animate(this.items[i],strArray);
-                    }, delay);
-
-                }
-
-
-            },
-            animate: function (el, strArray) {
-
-
-                if (strArray.length > 0) {
-                    el.current += strArray.shift();
-                }
-
-                if (strArray.length > 0) {
-                    setTimeout(() => {
-                        this.animate(el, strArray)
-                    }, 30);
-                }
-
-            }
         }
     }
 
@@ -82,6 +44,7 @@
         font-size: 18px;
         margin-top: 7vh;
         letter-spacing: 9px;
+        margin-bottom: 0;
         font-family: 'ModernNo20';
 
         p {
@@ -99,7 +62,6 @@
         @media screen and (max-width: 1920px) {
             color: white;
             font-size: 14px;
-            margin-bottom: 3vh;
             letter-spacing: 6px;
         }
     }

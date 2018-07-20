@@ -7,22 +7,19 @@
     >
         <div id="app" v-if="show" >
             <layout>
-
                 <template slot="colLeft">
                     <div id="backLeft">
-                        <BackgroungPlayer  class="opacity" />
+                        <BackgroungPlayer  />
                     </div>
                     <div id="Player">
                         <Player />
                     </div>
-
-
                 </template>
 
                 <template slot="colRight">
                     <div id="colRight">
                         <div id="backRight" >
-                            <BackgroundInfo class="opacity"/>
+                            <BackgroundInfo />
                         </div>
 
                         <div id="Social">
@@ -67,14 +64,9 @@
             },
             enter: function (el, done) {
 
-                let tl = new TimelineMax({delay:0.5, repeat:0, repeatDelay:0, onComplete:done});
+                let tl = new TimelineMax({delay:0.2,repeat:0, repeatDelay:0, onComplete:done});
 
-                tl
-                    .fromTo(el.querySelector('#backLeft > div'), 0.6,{marginTop:'100vh'}, {marginTop:0},'a')
-                    .fromTo(el.querySelector('#backRight > div'), 0.6,{marginBottom:'100vh'}, {marginBottom:0},'a')
-                    .fromTo(el.querySelector('#Social > div > #divlogo'), 0.6,{scale:0},{scale:1}, 'b')
-                    .fromTo(el.querySelector('#Player'), 0.6,{scale:0},{scale:1}, 'b')
-                    .staggerFromTo(el.querySelectorAll('#socialnetwork > div > div > a'), 0.7,{scale:0},{scale:1, delay: 1.2}, 0.3, 'c')
+                tl.fromTo(el.querySelector('#Player'), 0.5,{opacity:0,y:+10},{opacity:1,y:-10}, 'a')
             },
             leave: function (el, done) {
 
@@ -100,6 +92,12 @@
             height: 100%;
         }
 
+        #social{
+            @media screen and (max-width: 768px) {
+                padding-top:20px;
+            }
+        }
+
         .center-holder {
             text-align: center;
             margin: auto;
@@ -115,17 +113,7 @@
             }
         }
 
-        .opacity {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: black;
-            opacity: 0.8;
-            margin: 0;
-            padding: 0;
-        }
+
 
 
 }

@@ -1,6 +1,7 @@
 <template>
     <div id="background-holder" class="background-holder">
         <div id="pictureBg" class="pictureBg" :style="bgImage"></div>
+        <div class="opacity"></div>
     </div>
 </template>
 <script>
@@ -45,6 +46,17 @@
 
     .background-holder {
 
+        .opacity {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: black;
+            opacity: 0.8;
+            margin: 0;
+            padding: 0;
+        }
         .pictureBg {
             position: absolute;
             top: 0;

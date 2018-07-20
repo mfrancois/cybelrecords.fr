@@ -1,11 +1,11 @@
 <template>
     <div class="container-fluid">
         <div class="row fullwindowed">
-            <div class="col-xl-6">
-                <slot name="colLeft">
-                </slot>
+            <div class="col-xl-6 align-middle">
+                   <slot name="colLeft">
+                   </slot>
             </div>
-            <div class="col-xl-6">
+            <div class="col-xl-6 align-middle">
                 <slot name="colRight">
 
                 </slot>
@@ -26,5 +26,12 @@
 
     .fullwindowed{
         height: 100vh;
+    }
+
+    .align-middle{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 </style>
