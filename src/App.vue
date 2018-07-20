@@ -92,9 +92,16 @@
             height: 100%;
         }
 
-        #social{
+        #Social{
             @media screen and (max-width: 768px) {
-                padding-top:20px;
+                padding-top:60px;
+                padding-bottom:60px;
+            }
+        }
+
+        #Player{
+            @media screen and (max-width: 768px) {
+                padding-bottom:60px;
             }
         }
 
